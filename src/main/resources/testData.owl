@@ -1,0 +1,745 @@
+Prefix(:=<http://www.owl-ontologies.com/unnamed.owl#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+Ontology(<http://www.owl-ontologies.com/unnamed.owl>)
+
+Declaration(Class(:Above65))
+Declaration(Class(:Account))
+Declaration(Class(:AfterTransaction))
+Declaration(Class(:AgeValue))
+Declaration(Class(:Below18))
+Declaration(Class(:CashCredit))
+Declaration(Class(:CashWithdrawal))
+Declaration(Class(:CentralBohemia))
+Declaration(Class(:Classic))
+Declaration(Class(:Client))
+Declaration(Class(:CollectionAnotherBank))
+Declaration(Class(:Credit))
+Declaration(Class(:CreditCard))
+Declaration(Class(:CreditCardWithdrawal))
+Declaration(Class(:DebtRunningLoan))
+Declaration(Class(:EastBohemia))
+Declaration(Class(:FemaleSex))
+Declaration(Class(:Finished))
+Declaration(Class(:ForStatementPayment))
+Declaration(Class(:From18To25))
+Declaration(Class(:From25To35))
+Declaration(Class(:From35To50))
+Declaration(Class(:From50To65))
+Declaration(Class(:Gold))
+Declaration(Class(:HouseholdPayment))
+Declaration(Class(:InsurrancePayment))
+Declaration(Class(:InterestsCredited))
+Declaration(Class(:Junior))
+Declaration(Class(:Leasing))
+Declaration(Class(:Loan))
+Declaration(Class(:LoanPayment))
+Declaration(Class(:MaleSex))
+Declaration(Class(:Man))
+Declaration(Class(:Monthly))
+Declaration(Class(:NoProblemsFinishedLoan))
+Declaration(Class(:NorthBohemia))
+Declaration(Class(:NorthMoravia))
+Declaration(Class(:NotPaidFinishedLoan))
+Declaration(Class(:OKRunningLoan))
+Declaration(Class(:OKStatus))
+Declaration(Class(:OldAgePension))
+Declaration(Class(:Payment))
+Declaration(Class(:PermanentOrder))
+Declaration(Class(:Prague))
+Declaration(Class(:ProblemStatus))
+Declaration(Class(:Region))
+Declaration(Class(:RemittanceAnotherBank))
+Declaration(Class(:Running))
+Declaration(Class(:SanctionInterestCashWithdrawal))
+Declaration(Class(:SexValue))
+Declaration(Class(:SouthBohemia))
+Declaration(Class(:SouthMoravia))
+Declaration(Class(:StatementIssuanceFrequencyValue))
+Declaration(Class(:Transaction))
+Declaration(Class(:Weekly))
+Declaration(Class(:WestBohemia))
+Declaration(Class(:Withdrawal))
+Declaration(Class(:Woman))
+Declaration(NamedIndividual(:po29445))
+Declaration(NamedIndividual(:po29446))
+Declaration(NamedIndividual(:po29447))
+Declaration(NamedIndividual(:man42))
+Declaration(NamedIndividual(:man420))
+Declaration(NamedIndividual(:man4201))
+Declaration(NamedIndividual(:account34))
+Declaration(NamedIndividual(:account343))
+Declaration(NamedIndividual(:account3476))
+Declaration(NamedIndividual(:avAbove65))
+Declaration(NamedIndividual(:man1014))
+Declaration(NamedIndividual(:svFemaleSex))
+Declaration(NamedIndividual(:svMaleSex))
+Declaration(NamedIndividual(:rPrague))
+Declaration(NamedIndividual(:rSouthMoravia))
+Declaration(NamedIndividual(:po30622))
+Declaration(NamedIndividual(:po34547))
+Declaration(NamedIndividual(:po34548))
+Declaration(NamedIndividual(:sifvAfterTransaction))
+Declaration(NamedIndividual(:sifvMonthly))
+Declaration(NamedIndividual(:sifvWeekly))
+Declaration(NamedIndividual(:account842))
+Declaration(NamedIndividual(:account853))
+Declaration(NamedIndividual(:po30623))
+Declaration(NamedIndividual(:po30641))
+Declaration(NamedIndividual(:po30640))
+Declaration(NamedIndividual(:po29912))
+Declaration(ObjectProperty(:IsLoanOf))
+Declaration(ObjectProperty(:hasAgeValue))
+Declaration(ObjectProperty(:hasCreditCard))
+Declaration(ObjectProperty(:hasLoan))
+Declaration(ObjectProperty(:hasOwner))
+Declaration(ObjectProperty(:hasPermanentOrder))
+Declaration(ObjectProperty(:hasSexValue))
+Declaration(ObjectProperty(:hasStatementIssuanceFrequency))
+Declaration(ObjectProperty(:isCreditCardOf))
+Declaration(ObjectProperty(:isOwnerOf))
+Declaration(ObjectProperty(:isPermanentOrderFor))
+Declaration(ObjectProperty(:isTransactionFrom))
+Declaration(ObjectProperty(:isUserOf))
+Declaration(ObjectProperty(:isWithdrawalFor))
+Declaration(ObjectProperty(:livesIn))
+
+############################
+#   Object Properties
+############################
+
+# Object Property: :IsLoanOf (:IsLoanOf)
+
+InverseObjectProperties(:IsLoanOf :hasLoan)
+FunctionalObjectProperty(:IsLoanOf)
+InverseFunctionalObjectProperty(:IsLoanOf)
+ObjectPropertyDomain(:IsLoanOf :Loan)
+ObjectPropertyRange(:IsLoanOf :Account)
+
+# Object Property: :hasAgeValue (:hasAgeValue)
+
+FunctionalObjectProperty(:hasAgeValue)
+ObjectPropertyDomain(:hasAgeValue :Client)
+ObjectPropertyRange(:hasAgeValue :AgeValue)
+
+# Object Property: :hasCreditCard (:hasCreditCard)
+
+InverseObjectProperties(:hasCreditCard :isCreditCardOf)
+InverseFunctionalObjectProperty(:hasCreditCard)
+ObjectPropertyDomain(:hasCreditCard :Client)
+ObjectPropertyRange(:hasCreditCard :CreditCard)
+
+# Object Property: :hasLoan (:hasLoan)
+
+FunctionalObjectProperty(:hasLoan)
+InverseFunctionalObjectProperty(:hasLoan)
+ObjectPropertyDomain(:hasLoan :Account)
+ObjectPropertyRange(:hasLoan :Loan)
+
+
+
+# Object Property: :hasOwner (:hasOwner)
+
+InverseObjectProperties(:hasOwner :isOwnerOf)
+FunctionalObjectProperty(:hasOwner)
+ObjectPropertyDomain(:hasOwner :Account)
+ObjectPropertyRange(:hasOwner :Client)
+
+# Object Property: :hasPermanentOrder (:hasPermanentOrder)
+
+ObjectPropertyDomain(:hasPermanentOrder :Account)
+ObjectPropertyRange(:hasPermanentOrder :PermanentOrder)
+
+# Object Property: :hasSexValue (:hasSexValue)
+
+FunctionalObjectProperty(:hasSexValue)
+ObjectPropertyDomain(:hasSexValue :Client)
+ObjectPropertyRange(:hasSexValue :SexValue)
+
+# Object Property: :hasStatementIssuanceFrequency (:hasStatementIssuanceFrequency)
+
+FunctionalObjectProperty(:hasStatementIssuanceFrequency)
+ObjectPropertyDomain(:hasStatementIssuanceFrequency :Account)
+ObjectPropertyRange(:hasStatementIssuanceFrequency :StatementIssuanceFrequencyValue)
+
+# Object Property: :isCreditCardOf (:isCreditCardOf)
+
+FunctionalObjectProperty(:isCreditCardOf)
+ObjectPropertyDomain(:isCreditCardOf :CreditCard)
+ObjectPropertyRange(:isCreditCardOf :Client)
+
+# Object Property: :isOwnerOf (:isOwnerOf)
+
+InverseFunctionalObjectProperty(:isOwnerOf)
+ObjectPropertyDomain(:isOwnerOf :Client)
+ObjectPropertyRange(:isOwnerOf :Account)
+
+# Object Property: :isPermanentOrderFor (:isPermanentOrderFor)
+
+FunctionalObjectProperty(:isPermanentOrderFor)
+ObjectPropertyDomain(:isPermanentOrderFor :PermanentOrder)
+ObjectPropertyRange(:isPermanentOrderFor :Payment)
+
+# Object Property: :isTransactionFrom (:isTransactionFrom)
+
+FunctionalObjectProperty(:isTransactionFrom)
+ObjectPropertyDomain(:isTransactionFrom :Transaction)
+ObjectPropertyRange(:isTransactionFrom :Account)
+
+# Object Property: :isUserOf (:isUserOf)
+
+ObjectPropertyDomain(:isUserOf :Client)
+ObjectPropertyRange(:isUserOf :Account)
+
+# Object Property: :isWithdrawalFor (:isWithdrawalFor)
+
+FunctionalObjectProperty(:isWithdrawalFor)
+ObjectPropertyDomain(:isWithdrawalFor :Withdrawal)
+ObjectPropertyRange(:isWithdrawalFor :Payment)
+
+# Object Property: :livesIn (:livesIn)
+
+FunctionalObjectProperty(:livesIn)
+ObjectPropertyDomain(:livesIn :Client)
+ObjectPropertyRange(:livesIn :Region)
+
+############################
+#   Classes
+############################
+
+# Class: :Above65 (:Above65)
+
+SubClassOf(:Above65 :AgeValue)
+
+# Class: :Account (:Account)
+
+DisjointClasses(:Account :AgeValue)
+DisjointClasses(:Account :Client)
+DisjointClasses(:Account :CreditCard)
+DisjointClasses(:Account :Loan)
+DisjointClasses(:Account :Payment)
+DisjointClasses(:Account :PermanentOrder)
+DisjointClasses(:Account :Region)
+DisjointClasses(:Account :SexValue)
+DisjointClasses(:Account :Transaction)
+
+# Class: :AfterTransaction (:AfterTransaction)
+
+SubClassOf(:AfterTransaction :StatementIssuanceFrequencyValue)
+DisjointClasses(:AfterTransaction :Monthly)
+DisjointClasses(:AfterTransaction :Weekly)
+
+# Class: :AgeValue (:AgeValue)
+
+DisjointClasses(:AgeValue :Client)
+DisjointClasses(:AgeValue :CreditCard)
+DisjointClasses(:AgeValue :Loan)
+DisjointClasses(:AgeValue :Payment)
+DisjointClasses(:AgeValue :PermanentOrder)
+DisjointClasses(:AgeValue :Region)
+DisjointClasses(:AgeValue :SexValue)
+DisjointClasses(:AgeValue :Transaction)
+
+# Class: :Below18 (:Below18)
+
+SubClassOf(:Below18 :AgeValue)
+DisjointClasses(:Below18 :From18To25)
+DisjointClasses(:Below18 :From25To35)
+DisjointClasses(:Below18 :From35To50)
+DisjointClasses(:Below18 :From50To65)
+
+# Class: :CashCredit (:CashCredit)
+
+SubClassOf(:CashCredit :Credit)
+DisjointClasses(:CashCredit :CollectionAnotherBank)
+
+# Class: :CashWithdrawal (:CashWithdrawal)
+
+SubClassOf(:CashWithdrawal :Withdrawal)
+DisjointClasses(:CashWithdrawal :CreditCardWithdrawal)
+DisjointClasses(:CashWithdrawal :RemittanceAnotherBank)
+
+# Class: :CentralBohemia (:CentralBohemia)
+
+SubClassOf(:CentralBohemia :Region)
+DisjointClasses(:CentralBohemia :EastBohemia)
+DisjointClasses(:CentralBohemia :NorthBohemia)
+DisjointClasses(:CentralBohemia :NorthMoravia)
+DisjointClasses(:CentralBohemia :Prague)
+DisjointClasses(:CentralBohemia :SouthBohemia)
+DisjointClasses(:CentralBohemia :SouthMoravia)
+
+# Class: :Classic (:Classic)
+
+SubClassOf(:Classic :CreditCard)
+DisjointClasses(:Classic :Gold)
+DisjointClasses(:Classic :Junior)
+
+# Class: :Client (:Client)
+
+DisjointClasses(:Client :CreditCard)
+DisjointClasses(:Client :Loan)
+DisjointClasses(:Client :Payment)
+DisjointClasses(:Client :PermanentOrder)
+DisjointClasses(:Client :Region)
+DisjointClasses(:Client :SexValue)
+DisjointClasses(:Client :Transaction)
+
+# Class: :CollectionAnotherBank (:CollectionAnotherBank)
+
+SubClassOf(:CollectionAnotherBank :Credit)
+
+# Class: :Credit (:Credit)
+
+SubClassOf(:Credit :Transaction)
+DisjointClasses(:Credit :Withdrawal)
+
+# Class: :CreditCard (:CreditCard)
+
+DisjointClasses(:CreditCard :Loan)
+DisjointClasses(:CreditCard :Payment)
+DisjointClasses(:CreditCard :PermanentOrder)
+DisjointClasses(:CreditCard :Region)
+DisjointClasses(:CreditCard :SexValue)
+DisjointClasses(:CreditCard :Transaction)
+
+# Class: :CreditCardWithdrawal (:CreditCardWithdrawal)
+
+SubClassOf(:CreditCardWithdrawal :Withdrawal)
+DisjointClasses(:CreditCardWithdrawal :RemittanceAnotherBank)
+
+# Class: :DebtRunningLoan (:DebtRunningLoan)
+
+SubClassOf(:DebtRunningLoan :Running)
+DisjointClasses(:DebtRunningLoan :OKRunningLoan)
+
+# Class: :EastBohemia (:EastBohemia)
+
+SubClassOf(:EastBohemia :Region)
+DisjointClasses(:EastBohemia :NorthBohemia)
+DisjointClasses(:EastBohemia :NorthMoravia)
+DisjointClasses(:EastBohemia :Prague)
+DisjointClasses(:EastBohemia :SouthBohemia)
+DisjointClasses(:EastBohemia :SouthMoravia)
+
+# Class: :FemaleSex (:FemaleSex)
+
+SubClassOf(:FemaleSex :SexValue)
+DisjointClasses(:FemaleSex :MaleSex)
+
+# Class: :Finished (:Finished)
+
+SubClassOf(:Finished :Loan)
+DisjointClasses(:Finished :Running)
+
+# Class: :ForStatementPayment (:ForStatementPayment)
+
+SubClassOf(:ForStatementPayment :Payment)
+DisjointClasses(:ForStatementPayment :HouseholdPayment)
+DisjointClasses(:ForStatementPayment :InsurrancePayment)
+DisjointClasses(:ForStatementPayment :Leasing)
+DisjointClasses(:ForStatementPayment :LoanPayment)
+
+# Class: :From18To25 (:From18To25)
+
+SubClassOf(:From18To25 :AgeValue)
+DisjointClasses(:From18To25 :From25To35)
+DisjointClasses(:From18To25 :From35To50)
+DisjointClasses(:From18To25 :From50To65)
+
+# Class: :From25To35 (:From25To35)
+
+SubClassOf(:From25To35 :AgeValue)
+DisjointClasses(:From25To35 :From35To50)
+DisjointClasses(:From25To35 :From50To65)
+
+# Class: :From35To50 (:From35To50)
+
+SubClassOf(:From35To50 :AgeValue)
+DisjointClasses(:From35To50 :From50To65)
+
+# Class: :From50To65 (:From50To65)
+
+SubClassOf(:From50To65 :AgeValue)
+
+# Class: :Gold (:Gold)
+
+SubClassOf(:Gold :CreditCard)
+DisjointClasses(:Gold :Junior)
+
+# Class: :HouseholdPayment (:HouseholdPayment)
+
+SubClassOf(:HouseholdPayment :Payment)
+DisjointClasses(:HouseholdPayment :InsurrancePayment)
+DisjointClasses(:HouseholdPayment :Leasing)
+DisjointClasses(:HouseholdPayment :LoanPayment)
+
+# Class: :InsurrancePayment (:InsurrancePayment)
+
+SubClassOf(:InsurrancePayment :Payment)
+DisjointClasses(:InsurrancePayment :Leasing)
+DisjointClasses(:InsurrancePayment :LoanPayment)
+
+# Class: :InterestsCredited (:InterestsCredited)
+
+SubClassOf(:InterestsCredited :Credit)
+
+# Class: :Junior (:Junior)
+
+SubClassOf(:Junior :CreditCard)
+
+# Class: :Leasing (:Leasing)
+
+SubClassOf(:Leasing :Payment)
+DisjointClasses(:Leasing :LoanPayment)
+
+# Class: :LoanPayment (:LoanPayment)
+
+SubClassOf(:LoanPayment :Payment)
+
+
+
+# Class: :Loan (:Loan)
+
+DisjointClasses(:Loan :Payment)
+DisjointClasses(:Loan :PermanentOrder)
+DisjointClasses(:Loan :Region)
+DisjointClasses(:Loan :SexValue)
+DisjointClasses(:Loan :Transaction)
+
+
+
+# Class: :MaleSex (:MaleSex)
+
+SubClassOf(:MaleSex :SexValue)
+
+# Class: :Man (:Man)
+
+SubClassOf(:Man :Client)
+SubClassOf(:Man ObjectAllValuesFrom(:hasSexValue :MaleSex))
+DisjointClasses(:Man :Woman)
+
+# Class: :Monthly (:Monthly)
+
+SubClassOf(:Monthly :StatementIssuanceFrequencyValue)
+DisjointClasses(:Monthly :Weekly)
+
+# Class: :NoProblemsFinishedLoan (:NoProblemsFinishedLoan)
+
+SubClassOf(:NoProblemsFinishedLoan :Finished)
+DisjointClasses(:NoProblemsFinishedLoan :NotPaidFinishedLoan)
+
+# Class: :NorthBohemia (:NorthBohemia)
+
+SubClassOf(:NorthBohemia :Region)
+DisjointClasses(:NorthBohemia :NorthMoravia)
+DisjointClasses(:NorthBohemia :Prague)
+DisjointClasses(:NorthBohemia :SouthBohemia)
+DisjointClasses(:NorthBohemia :SouthMoravia)
+
+# Class: :NorthMoravia (:NorthMoravia)
+
+SubClassOf(:NorthMoravia :Region)
+DisjointClasses(:NorthMoravia :Prague)
+DisjointClasses(:NorthMoravia :SouthBohemia)
+DisjointClasses(:NorthMoravia :SouthMoravia)
+
+# Class: :NotPaidFinishedLoan (:NotPaidFinishedLoan)
+
+SubClassOf(:NotPaidFinishedLoan :Finished)
+
+# Class: :OKRunningLoan (:OKRunningLoan)
+
+SubClassOf(:OKRunningLoan :Running)
+
+# Class: :OKStatus (:OKStatus)
+
+DisjointClasses(:OKStatus :ProblemStatus)
+
+# Class: :OldAgePension (:OldAgePension)
+
+SubClassOf(:OldAgePension :CollectionAnotherBank)
+
+# Class: :Payment (:Payment)
+
+DisjointClasses(:Payment :PermanentOrder)
+DisjointClasses(:Payment :Region)
+DisjointClasses(:Payment :SexValue)
+DisjointClasses(:Payment :Transaction)
+
+# Class: :PermanentOrder (:PermanentOrder)
+
+SubClassOf(:PermanentOrder owl:Thing)
+SubClassOf(:PermanentOrder ObjectAllValuesFrom(:isPermanentOrderFor :Payment))
+DisjointClasses(:PermanentOrder :Region)
+DisjointClasses(:PermanentOrder :SexValue)
+DisjointClasses(:PermanentOrder :Transaction)
+
+# Class: :Prague (:Prague)
+
+SubClassOf(:Prague :Region)
+DisjointClasses(:Prague :SouthBohemia)
+DisjointClasses(:Prague :SouthMoravia)
+
+# Class: :ProblemStatus (:ProblemStatus)
+
+
+# Class: :Region (:Region)
+
+DisjointClasses(:Region :SexValue)
+DisjointClasses(:Region :Transaction)
+
+# Class: :RemittanceAnotherBank (:RemittanceAnotherBank)
+
+SubClassOf(:RemittanceAnotherBank :Withdrawal)
+
+# Class: :Running (:Running)
+
+SubClassOf(:Running :Loan)
+
+# Class: :SanctionInterestCashWithdrawal (:SanctionInterestCashWithdrawal)
+
+SubClassOf(:SanctionInterestCashWithdrawal :CashWithdrawal)
+
+# Class: :SexValue (:SexValue)
+
+DisjointClasses(:SexValue :Transaction)
+
+# Class: :SouthBohemia (:SouthBohemia)
+
+SubClassOf(:SouthBohemia :Region)
+DisjointClasses(:SouthBohemia :SouthMoravia)
+
+# Class: :SouthMoravia (:SouthMoravia)
+
+SubClassOf(:SouthMoravia :Region)
+
+# Class: :Weekly (:Weekly)
+
+SubClassOf(:Weekly :StatementIssuanceFrequencyValue)
+
+# Class: :WestBohemia (:WestBohemia)
+
+SubClassOf(:WestBohemia :Region)
+
+# Class: :Withdrawal (:Withdrawal)
+
+SubClassOf(:Withdrawal :Transaction)
+
+# Class: :Woman (:Woman)
+
+SubClassOf(:Woman :Client)
+SubClassOf(:Woman ObjectAllValuesFrom(:hasSexValue :FemaleSex))
+
+############################
+#   Named Individuals
+############################
+
+
+# Individual: :po30622 (:po30622)
+
+ClassAssertion(:PermanentOrder :po30622)
+ObjectPropertyAssertion(:isPermanentOrderFor :po30622 :pHouseholdPayment)
+
+# Individual: :po30623 (:po30623)
+
+ClassAssertion(:PermanentOrder :po30623)
+ObjectPropertyAssertion(:isPermanentOrderFor :po30623 :pHouseholdPayment)
+
+# Individual: :po30641 (:po30641)
+
+ClassAssertion(:PermanentOrder :po30641)
+ObjectPropertyAssertion(:isPermanentOrderFor :po30641 :pPayment)
+
+# Individual: :po30640 (:po30640)
+
+ClassAssertion(:PermanentOrder :po30640)
+ObjectPropertyAssertion(:isPermanentOrderFor :po30640 :pHouseholdPayment)
+
+# Individual: :avAbove65 (:avAbove65)
+
+ClassAssertion(:Above65 :avAbove65)
+
+# Individual: :po29445 (:po29445)
+
+ClassAssertion(:PermanentOrder :po29445)
+ObjectPropertyAssertion(:isPermanentOrderFor :po29445 :pLeasing)
+
+# Individual: :po29912 (:po29912)
+
+ClassAssertion(:PermanentOrder :po29912)
+ObjectPropertyAssertion(:isPermanentOrderFor :po29912 :pHouseholdPayment)
+
+# Individual: :account34 (:account34)
+
+ClassAssertion(:Account :account34)
+ObjectPropertyAssertion(:hasOwner :account34 :man42)
+ObjectPropertyAssertion(:hasPermanentOrder :account34 :po29445)
+ObjectPropertyAssertion(:hasPermanentOrder :account34 :po29446)
+ObjectPropertyAssertion(:hasPermanentOrder :account34 :po29447)
+ObjectPropertyAssertion(:hasStatementIssuanceFrequency :account34 :sifvWeekly)
+
+
+# Individual: :account343 (:account343)
+
+ClassAssertion(:Account :account343)
+ObjectPropertyAssertion(:hasOwner :account343 :man420)
+ObjectPropertyAssertion(:hasPermanentOrder :account343 :po29912)
+ObjectPropertyAssertion(:hasStatementIssuanceFrequency :account343 :sifvMonthly)
+
+
+# Individual: :account3476 (:account3476)
+
+ClassAssertion(:Account :account3476)
+ObjectPropertyAssertion(:hasOwner :account3476 :man4201)
+ObjectPropertyAssertion(:hasPermanentOrder :account3476 :po34547)
+ObjectPropertyAssertion(:hasPermanentOrder :account3476 :po34548)
+ObjectPropertyAssertion(:hasStatementIssuanceFrequency :account3476 :sifvMonthly)
+
+# Individual: :account841 (:account841)
+
+ClassAssertion(:Account :account841)
+ObjectPropertyAssertion(:hasOwner :account841 :man1014)
+ObjectPropertyAssertion(:hasPermanentOrder :account841 :po30622)
+ObjectPropertyAssertion(:hasStatementIssuanceFrequency :account841 :sifvMonthly)
+
+# Individual: :account842 (:account842)
+
+ClassAssertion(:Account :account842)
+ObjectPropertyAssertion(:hasOwner :account842 :man1015)
+ObjectPropertyAssertion(:hasPermanentOrder :account842 :po30623)
+ObjectPropertyAssertion(:hasStatementIssuanceFrequency :account842 :sifvMonthly)
+
+# Individual: :account853 (:account853)
+
+ClassAssertion(:Account :account853)
+ObjectPropertyAssertion(:hasOwner :account853 :woman1027)
+ObjectPropertyAssertion(:hasPermanentOrder :account853 :po30640)
+ObjectPropertyAssertion(:hasPermanentOrder :account853 :po30641)
+ObjectPropertyAssertion(:hasStatementIssuanceFrequency :account853 :sifvMonthly)
+
+# Individual: :account34 (:account34)
+
+ClassAssertion(:Account :account34)
+ObjectPropertyAssertion(:hasOwner :account34 :man42)
+ObjectPropertyAssertion(:hasPermanentOrder :account34 :po29445)
+ObjectPropertyAssertion(:hasPermanentOrder :account34 :po29446)
+ObjectPropertyAssertion(:hasPermanentOrder :account34 :po29447)
+ObjectPropertyAssertion(:hasStatementIssuanceFrequency :account34 :sifvWeekly)
+
+
+# Individual: :po29446 (:po29446)
+
+ClassAssertion(:PermanentOrder :po29446)
+ObjectPropertyAssertion(:isPermanentOrderFor :po29446 :pHouseholdPayment)
+
+# Individual: :po29447 (:po29447)
+
+ClassAssertion(:PermanentOrder :po29447)
+ObjectPropertyAssertion(:isPermanentOrderFor :po29447 :pPayment)
+
+# Individual: :po34547 (:po34547)
+
+ClassAssertion(:PermanentOrder :po34547)
+ObjectPropertyAssertion(:isPermanentOrderFor :po34547 :pHouseholdPayment)
+
+# Individual: :po34548 (:po34548)
+
+ClassAssertion(:PermanentOrder :po34548)
+ObjectPropertyAssertion(:isPermanentOrderFor :po34548 :pPayment)
+
+# Individual: :account343 (:account343)
+
+ClassAssertion(:Account :account343)
+ObjectPropertyAssertion(:hasOwner :account343 :man420)
+ObjectPropertyAssertion(:hasPermanentOrder :account343 :po29912)
+ObjectPropertyAssertion(:hasStatementIssuanceFrequency :account343 :sifvMonthly)
+
+
+# Individual: :account3476 (:account3476)
+
+ClassAssertion(:Account :account3476)
+ObjectPropertyAssertion(:hasOwner :account3476 :man4201)
+ObjectPropertyAssertion(:hasPermanentOrder :account3476 :po34547)
+ObjectPropertyAssertion(:hasPermanentOrder :account3476 :po34548)
+ObjectPropertyAssertion(:hasStatementIssuanceFrequency :account3476 :sifvMonthly)
+
+
+# Individual: :creditcard4 (:creditcard4)
+
+ClassAssertion(:Classic :creditcard4)
+ObjectPropertyAssertion(:isCreditCardOf :creditcard4 :man42)
+
+
+# Individual: :creditcard651 (:creditcard651)
+
+ClassAssertion(:Junior :creditcard651)
+ObjectPropertyAssertion(:isCreditCardOf :creditcard651 :man4201)
+
+# Individual: :woman1027 (:woman1027)
+
+ClassAssertion(:Woman :woman1027)
+ObjectPropertyAssertion(:hasAgeValue :woman1027 :avFrom50To65)
+ObjectPropertyAssertion(:hasCreditCard :woman1027 :creditcard171)
+ObjectPropertyAssertion(:hasSexValue :woman1027 :svFemaleSex)
+ObjectPropertyAssertion(:isOwnerOf :woman1027 :account853)
+ObjectPropertyAssertion(:livesIn :woman1027 :rPrague)
+
+# Individual: :man1014 (:man1014)
+
+ClassAssertion(:Man :man1014)
+ObjectPropertyAssertion(:hasAgeValue :man1014 :avAbove65)
+ObjectPropertyAssertion(:hasSexValue :man1014 :svMaleSex)
+ObjectPropertyAssertion(:isOwnerOf :man1014 :account841)
+ObjectPropertyAssertion(:isUserOf :man1014 :account853)
+ObjectPropertyAssertion(:livesIn :man1014 :rPrague)
+
+# Individual: :man1015 (:man1015)
+
+ClassAssertion(:Man :man1015)
+ObjectPropertyAssertion(:hasAgeValue :man1015 :avAbove65)
+ObjectPropertyAssertion(:hasSexValue :man1015 :svMaleSex)
+ObjectPropertyAssertion(:isOwnerOf :man1015 :account842)
+ObjectPropertyAssertion(:livesIn :man1015 :rSouthMoravia)
+
+# Individual: :man1028 (:man1028)
+
+ClassAssertion(:Man :man1028)
+ObjectPropertyAssertion(:hasAgeValue :man1028 :avAbove65)
+ObjectPropertyAssertion(:hasSexValue :man1028 :svMaleSex)
+ObjectPropertyAssertion(:isUserOf :man1028 :account853)
+ObjectPropertyAssertion(:isOwnerOf :man1028 :account853)
+ObjectPropertyAssertion(:livesIn :man1028 :rPrague)
+
+
+# Individual: :man42 (:man42)
+
+ClassAssertion(:Man :man42)
+ObjectPropertyAssertion(:hasAgeValue :man42 :avFrom50To65)
+ObjectPropertyAssertion(:hasCreditCard :man42 :creditcard4)
+ObjectPropertyAssertion(:hasSexValue :man42 :svMaleSex)
+ObjectPropertyAssertion(:isOwnerOf :man42 :account34)
+ObjectPropertyAssertion(:livesIn :man42 :rNorthMoravia)
+
+
+# Individual: :man420 (:man420)
+
+ClassAssertion(:Man :man420)
+ObjectPropertyAssertion(:hasAgeValue :man420 :avFrom18To25)
+ObjectPropertyAssertion(:hasSexValue :man420 :svMaleSex)
+ObjectPropertyAssertion(:isOwnerOf :man420 :account343)
+ObjectPropertyAssertion(:livesIn :man420 :rSouthBohemia)
+
+
+# Individual: :man4201 (:man4201)
+
+ClassAssertion(:Man :man4201)
+ObjectPropertyAssertion(:hasAgeValue :man4201 :avFrom18To25)
+ObjectPropertyAssertion(:hasCreditCard :man4201 :creditcard651)
+ObjectPropertyAssertion(:hasSexValue :man4201 :svMaleSex)
+ObjectPropertyAssertion(:isOwnerOf :man4201 :account3476)
+ObjectPropertyAssertion(:livesIn :man4201 :rCentralBohemia)
